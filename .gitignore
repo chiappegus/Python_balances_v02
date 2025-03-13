@@ -306,7 +306,14 @@ migrations/versions/__pycache__
 balances_GUS_*
 
 
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
+*.sbn
+*.sbx
+*.shp.xml
 
-
-output/*
-reservas/*
+# output/*
+# reservas/*
