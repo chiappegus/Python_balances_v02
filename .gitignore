@@ -317,3 +317,6 @@ balances_GUS_*
 
 # output/*
 # reservas/*
+balances.txt
+
+BALANCE_TXT_GUS_V02_mio.*
