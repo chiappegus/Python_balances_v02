@@ -40,12 +40,18 @@ $ pwd
 pero esta en : 
 C:\Users\gchiappe\Desktop\Ora\BALANCES_GUS_PY
 entonces en el bash pones
-$ cd ~
+$ cd ~ Desktop/Ora/BALANCES_GUS_PY
 $ pwd
 /c/Users/gchiappe
 
 $ cd Desktop/Ora/BALANCES_GUS_PY
 gchiappe@E102202 MINGW64 ~/Desktop/Ora/BALANCES_GUS_PY (main)
+
+hacer : 
+
+$ cd ~/Desktop/Ora/BALANCES_GUS_PY
+
+
 
 y ahi activas como cualquiera :
 source env/Scripts/activate
