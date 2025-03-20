@@ -316,7 +316,7 @@ balances_GUS_*
 *.shp.xml
 
 # output/*
-# reservas/*
+reservas/*
 balances.txt
 
 BALANCE_TXT_GUS_V02_mio.*

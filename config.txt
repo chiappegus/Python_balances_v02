@@ -1,0 +1,7 @@
+carpeta_reserva = "./archivo_balance/"
+data_folder = "./reservas/"
+output = "./output/"
+fecha = "20250318"
+archivo = "balances.txt"
+prioridad_m11 = "False"
+prioridad_m21 = "False"
