@@ -40,7 +40,7 @@ $ pwd
 pero esta en : 
 C:\Users\gchiappe\Desktop\Ora\BALANCES_GUS_PY
 entonces en el bash pones
-$ cd ~ Desktop/Ora/BALANCES_GUS_PY
+$ cd ~/Desktop/Ora/BALANCES_GUS_PY
 $ pwd
 /c/Users/gchiappe
 
@@ -48,13 +48,12 @@ $ cd Desktop/Ora/BALANCES_GUS_PY
 gchiappe@E102202 MINGW64 ~/Desktop/Ora/BALANCES_GUS_PY (main)
 
 hacer : 
-
-$ cd ~/Desktop/Ora/BALANCES_GUS_PY
-
-
-
-y ahi activas como cualquiera :
+1:
+cd ~/Desktop/Ora/BALANCES_GUS_PY
+2:
 source env/Scripts/activate
+3:
+cd /d/ORA_proyectos/Python_balances_v02
 
 (env) 
 gchiappe@E102202 MINGW64 ~/Desktop/Ora/BALANCES_GUS_PY (main)
