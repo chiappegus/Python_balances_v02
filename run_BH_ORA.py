@@ -18,6 +18,13 @@ def parse_config(file_path):
                 config[match.group(1)] = match.group(2)
     return config
 
+def str_to_bool(s):
+    if s == 'True':
+         return True
+    elif s == 'False':
+         return False
+    else:
+         raise ValueError
 
 start = time.time()
 # Archivo de configuracion de variables
@@ -29,10 +36,12 @@ config = parse_config(config_file)
 carpeta = config.get('carpeta_reserva')
 fechastr = config.get('fecha')
 narchivo = config.get('archivo')
-prioridad_m11 = config.get('prioridad_m11')
-prioridad_m21 = config.get('prioridad_m21')
+prioridad_m11 = str_to_bool(config.get('prioridad_m11'))
+prioridad_m21 = str_to_bool(config.get('prioridad_m21'))
 data_folder = config.get('data_folder')
 output_folder = config.get('output')
+
+
 
 sep = ','
 archivo = carpeta + fechastr + '/' + narchivo
@@ -184,7 +193,7 @@ reservasgpd = gpd.read_file(reservasshp)
 reservasgpd['centroide'] = reservasgpd['Ctrde']
 reservasgpd['centroide'].head()
 reservasoutgpd = reservasgpd.merge(df, on='centroide')
-output_file = 'RESERVAS.shp'
+output_file = 'RESERVAS-' + fecha.strftime('%Y%m%d') + '.shp'
 output_path = os.path.join(output_folder, output_file)
 reservasoutgpd.to_file(output_path)
 print('### Archivo:', output_path, 'listo.')
@@ -199,7 +208,7 @@ R500_201709shpIngpd = gpd.read_file(R500_201709shp)
 R500_201709shpIngpd['centroide'] = R500_201709shpIngpd['Ctrde_ID']
 R500_201709shpIngpd_out = R500_201709shpIngpd.merge(df, on='centroide')
 R500_201709shpIngpd_out.head(1)
-output_file = 'RESERVAS_500.shp'
+output_file = 'RESERVAS_500-' + fecha.strftime('%Y%m%d') + '.shp'
 output_path = os.path.join(output_folder, output_file)
 R500_201709shpIngpd_out.to_file(output_path)
 print('### Archivo:', output_path, 'listo.')
@@ -216,7 +225,7 @@ CBAnewINgpd = gpd.read_file(CBAnewINshp)
 CBAnewINgpd['centroide'] = CBAnewINgpd['nom_ctdre']
 CBAnewINgpd['centroide'].head(1)
 CBAnewINgpd_out = CBAnewINgpd.merge(df, on='centroide')
-output_file = '50-CBAnew-OUT.shp'
+output_file = '50-CBAnew-OUT-' + fecha.strftime('%Y%m%d') + '.shp'
 output_path = os.path.join(output_folder, output_file)
 CBAnewINgpd_out.to_file(output_path)
 print('### Archivo:', output_path, 'listo.')
@@ -230,7 +239,7 @@ CORRIENTESINshp = os.path.join(data_folder, '50-CORRIENTES-IN.shp')
 CORRIENTESINgpd = gpd.read_file(CORRIENTESINshp)
 CORRIENTESINgpd['centroide'] = CORRIENTESINgpd['CTRDE']
 CORRIENTESINgpd_out = CORRIENTESINgpd.merge(df, on='centroide')
-output_file = '50-CORRIENTES-OUT.shp'
+output_file = '50-CORRIENTES-OUT-' + fecha.strftime('%Y%m%d') + '.shp'
 output_path = os.path.join(output_folder, output_file)
 CORRIENTESINgpd_out.to_file(output_path)
 print('### Archivo:', output_path, 'listo.')
@@ -247,7 +256,7 @@ CuencaSaladoIngpd['centroide'] = CuencaSaladoIngpd['Centroide']
 CuencaSaladoIngpd.drop('Centroide', axis='columns', inplace=True)
 CuencaSaladoIngpd_out = CuencaSaladoIngpd.merge(df, on='centroide')
 CuencaSaladoIngpd_out.head(1)
-output_file = 'P-CN_Cuenca_Salado.shp'
+output_file = 'P-CN_Cuenca_Salado-' + fecha.strftime('%Y%m%d') + '.shp'
 output_path = os.path.join(output_folder, output_file)
 CuencaSaladoIngpd_out.to_file(output_path)
 print('### Archivo:', output_path, 'listo.')

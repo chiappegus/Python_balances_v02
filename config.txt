@@ -1,7 +1,11 @@
-carpeta_reserva = "./archivo_balance/"
+carpeta_reserva = "C:/Users/fcarrasco/Desktop/areservas/"
 data_folder = "./reservas/"
 output = "./output/"
+<<<<<<< Updated upstream
 fecha = "20250204"
+=======
+fecha = "20250413"
+>>>>>>> Stashed changes
 archivo = "balances.txt"
 prioridad_m11 = "False"
 prioridad_m21 = "False"
